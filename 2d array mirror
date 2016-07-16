@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int tst, m ,n , l;
+int i, j ,k;
+/////////////////////////////////////////////
+///////////////////////////////////////////
+/// problems :
+/*
+1. scanf("%c" , & st )    // doesn't read but   scanf("%d" , & st ) // works  
+
+
+
+*/
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+///////////////////////////////////////////
+int main()
+{
+
+//read
+printf("testcases ?");
+      scanf("%d" , &tst);
+      char (*arr)[50][50]=(char***)malloc((51)*50*tst*sizeof(char) );
+      for(l =0 ; l < tst ;++l)
+      {
+
+      printf("n of strings");
+      scanf("%d" ,&n );
+      printf("m of chars in each string");
+      scanf("%d" ,&m );
+
+
+    // pointer to m+1 chars
+printf("strings one by one \n");
+ for( i =0 ;i < n ; ++i)
+ {
+      arr[l][i][m]='\0';
+     scanf("%s"  , arr[l][i]);
+
+ }
+//check
+  for(i=0 ; i <n ; ++i)
+{
+          printf("%s \n" , arr[l][i]);
+ }
+
+printf("\n");
+  printf("v or h mirror \n");
+     int st;
+      scanf("%d" , &st);
+if(st==1)
+{
+   for( i =0 ;i < n ; ++i)
+ {
+   for(j=0 , k=(m-1) ; j<k ; ++j , --k)
+{
+char temp = arr[l][i][j];
+arr[l][i][j]=arr[l][i][k];
+arr[l][i][k]=temp;
+}
+ }
+
+}
+else if(st==2)
+{
+     for( j =0 ;j < m ; ++j)
+ {
+   for(i=0 , k=(n-1) ; i<k ; ++i , --k)
+{
+char temp = arr[l][i][j];
+arr[l][i][j]=arr[l][k][j];
+arr[l][k][j]=temp;
+}
+ }
+
+}
+}
+/////////////////////////////////////////////////////
+  //check
+  for( l =0 ; l <tst ; ++l)
+  {
+   for(i=0 ; i <n ; ++i)
+     {
+          printf("%s \n" , arr[l][i]);
+     }
+  }
+    return 0;
+}
