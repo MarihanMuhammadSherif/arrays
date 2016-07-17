@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main()
+{
+int tst , l ,i ,j ,c;
+scanf("%d",&tst);
+int output[tst]; //number of distinct pair
+for(l=0 ; l <tst ; ++l)
+{
+     //testcases
+     //takeinput
+     //calculate output and save at
+     int n,k ;
+     scanf("%d",&n);
+     scanf("%d",&k);
+     int nums[n];
+for(i=0 ; i<n ; ++i){scanf("%d" , &nums[i]); }//initialization holding the input
+ int pairs=0;
+ for(i=0 ; i < n ; ++i)//searching
+{
+     for(j=(i+1) ; j <n ; ++j)//take a num and compare to all after
+     {
+
+          if( (nums[i]+nums[j] )==k )
+               {++pairs;
+               for( c=i ; c<n ; ++c)
+               {
+                    if( (nums[c]==nums[i] )|| (nums[c]==nums[j]) )
+                    {
+                         nums[c]=0;
+                    }
+               }
+          }
+     }
+     printf("%d  ", nums[i]);
+}
+
+     output[l]=pairs;
+
+
+}
+//print out put
+for(l=0 ; l< tst ;++l)
+{
+   //  printf("%d \n " ,output[l]);
+}
+
+
+  return 0;
+}
