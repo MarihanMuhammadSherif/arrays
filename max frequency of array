@@ -1,0 +1,77 @@
+/*
+Problem statement
+Given a list of integers, find out the number that has the highest frequency. If there are one or more such numbers, output the smaller one.
+
+Input
+First line of input will contain an integer T = number of test cases. Each test case will contain two lines. First line will contain an integer N = number of elements in the sequence and 1 <= N <= 1000. Next line will contain N space separated integers of sequence A. For each Ai in sequence A, 1<= Ai <= 10001.
+
+Output
+For each test case, print on a single line, the number with highest frequency in the sequence.
+
+Sample Input
+3
+7
+2 4 5 2 3 2 4
+6
+1 2 1 1 2 1
+10
+1 1 1 1 1 1 1 1 1 1
+Sample Output
+2
+1
+1
+*/
+//code
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+void x();
+int main()
+{
+x();
+
+
+  return 0;
+}
+
+
+
+void x()
+{int n=5;
+     int a[]={1,2,3,4,2};
+     int distincit =n;
+     int i,j;
+     for(i=0;i<n-1;++i)
+     {
+          for(j=i+1;j<n;++j)
+          {
+               if(a[i]==a[j])
+               {
+                    --distincit;
+               }
+          }
+     }
+     printf("  distincit numbers are %d \n",distincit);
+int frq[distincit];
+int num[distincit];
+for(i=0;i<n-1;++i)
+     { frq[i]=1;
+     num[i]=a[i];
+          for(j=i+1;j<n;++j)
+          {
+               if(a[i]==a[j])
+               {
+                    ++frq[i];
+
+               }
+          }
+     }
+for(i=0;i<distincit;++i)
+{
+     printf(" num %d freq %d \n",num[i],frq[i]);
+}
+
+
+}
