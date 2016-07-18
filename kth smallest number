@@ -1,0 +1,86 @@
+/*
+Problem statement
+Given a sequence of integers and a number k, find the Kth smallest number in this sequence.
+
+Input
+First line of input will contain a number T = number of test cases. Each test case will contain two lines. First line will contain two integers N = number of elements in sequence, and K. Next line will contain a space separated list of N integers.
+
+Output
+For each test case, print the Kth smallest number in the sequence on a single line.
+
+Sample Input
+3
+5 2
+3 1 4 8 5
+7 5
+7 6 5 4 3 2 1
+3 1
+12 15 13
+Sample Output
+3
+5
+12
+*/
+
+///code
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+void x();
+int main()
+{
+
+x();
+
+  return 0;
+}
+
+void x()
+{     int f(int* a,int n,int k);
+     int tst=2;
+     int output[tst];
+     int l;
+     for(l=0;l<tst;++l)
+     {
+     int n=5;
+     int k=2;
+     int a[n];
+     int i;
+     for(i=0;i<n;++i)
+     {
+          scanf("%d",&a[i]);
+     }
+      output[l]=f(a,n,k);
+     }
+for(l=0;l<tst;++l)
+{
+     printf("%d",output[l]);
+}
+
+}
+
+int f(int* a,int n,int k)
+{
+   int kth;
+     //buble sort
+     int i,j;
+     for(i=0;i<n-1;++i)
+     {
+          for(j=0;j<n-1;++j)
+          {
+               if(a[j]>a[j+1])
+               {
+                   int t=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=t;
+               }
+          }
+     }
+
+
+          kth=a[k-1];
+     return kth;
+}
+
